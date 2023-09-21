@@ -6,6 +6,7 @@ package za.co.vsoftsystems.domain;
 * Description: This is the ReceiptData domain class
 *
 * */
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -15,11 +16,17 @@ import jakarta.persistence.Table;
 public class ReceiptData {
     @Id
     private int id;
+    @Column(name = "center_name")
     private String centerName;
+    @Column(name = "name")
     private String name;
+    @Column(name = "vfs_reference")
     private String vfsReference;
+    @Column(name = "visa_category")
     private String visaCategory;
+    @Column(name = "subcategory")
     private String subcategory;
+    @Column(name = "subtype")
     private String subtype;
 
 

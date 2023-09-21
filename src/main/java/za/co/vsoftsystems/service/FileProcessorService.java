@@ -1,14 +1,8 @@
 package za.co.vsoftsystems.service;
-/*
-* Author: Peter Buckingham (220165289)
-* Date: 20 Sep 2023
-* File: FileProcessorService.java
-* Description: This is the FileProcessorService class
-*
-* */
 
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import za.co.vsoftsystems.domain.ReceiptData;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,6 +12,9 @@ import java.util.List;
 
 @Service
 public class FileProcessorService {
+
+    @Autowired
+    private ReceiptRegexProcessor regexProcessor;
 
     public void processFiles(String folderPath) {
         File folder = new File(folderPath);
@@ -32,6 +29,11 @@ public class FileProcessorService {
                         for (String line : lines) {
                             // Process each line of the file here
                             System.out.println(line);
+
+                            // Use regexProcessor to extract receipt data
+                            ReceiptData receiptData = regexProcessor.extractReceiptData(line);
+
+                            // Now you can use receiptData for further processing or database insertion
                         }
                     } catch (IOException e) {
                         e.printStackTrace();
@@ -41,4 +43,3 @@ public class FileProcessorService {
         }
     }
 }
-
