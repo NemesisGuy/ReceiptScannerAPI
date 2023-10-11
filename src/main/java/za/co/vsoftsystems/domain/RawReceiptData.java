@@ -1,13 +1,13 @@
 package za.co.vsoftsystems.domain;
-/*
+/**
 * Author: Peter Buckingham
 * File: RawReceiptData.java
 * Description: This is the RawReceiptData domain class
 * This class defines the RawReceiptData object
 * */
+
 import jakarta.persistence.*;
 
-import java.security.Timestamp;
 import java.util.Date;
 
 @Entity

@@ -1,5 +1,5 @@
 package za.co.vsoftsystems.service;
-/*
+/**
 * Author: Peter Buckingham
 * File: FileProcessorService.java
 * Description: This is the FileProcessorService class
@@ -7,6 +7,7 @@ package za.co.vsoftsystems.service;
 * */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import za.co.vsoftsystems.domain.ReceiptData;
 
@@ -23,12 +24,13 @@ public class FileProcessorService {
     @Autowired
     private ReceiptRegexProcessor regexProcessor;
 
-    private String folderPath = "src/main/java/za/co/vsoftsystems/testdata/inputdata";
+    @Value("${fileprocessor.inputdir}")
+    private String inputDir;
 
-    public List<ReceiptData> processFiles(String folderPath) {
+    public List<ReceiptData> processFiles(String inputDir) {
         List<ReceiptData> receiptDataList = new ArrayList<>();
 
-        File folder = new File(folderPath);
+        File folder = new File(inputDir);
 
         if (folder.isDirectory()) {
             File[] files = folder.listFiles((dir, name) -> name.endsWith(".txt"));

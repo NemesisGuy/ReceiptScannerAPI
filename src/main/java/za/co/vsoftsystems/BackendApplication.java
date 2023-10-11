@@ -1,9 +1,10 @@
 package za.co.vsoftsystems;
 /**
- * BackendApplication.java
- * This is the main class for the backend
  * Author: Peter Buckingham (220165289)
- * Date: 20 Sep 2023
+ * BackendApplication.java
+ * This is the main class for the backend application, this class will be used to run the backend application
+ *
+ *
  */
 
 import org.springframework.boot.SpringApplication;
@@ -16,5 +17,4 @@ public class BackendApplication {
         SpringApplication.run(BackendApplication.class, args);
     }
 
-    //factory, repos, domain, controllers and services
 }

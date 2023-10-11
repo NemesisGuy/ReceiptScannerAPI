@@ -1,5 +1,5 @@
 package za.co.vsoftsystems.domain;
-/*
+/**
 * Author: Peter Buckingham (220165289)
 * Date: 20 Sep 2023
 * File: ReceiptData.java

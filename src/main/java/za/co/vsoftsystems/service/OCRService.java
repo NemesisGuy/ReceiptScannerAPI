@@ -1,5 +1,5 @@
 package za.co.vsoftsystems.service;
-/*
+/**
 * Author: Peter Buckingham
 * File: OCRService.java
 * Description: This is the OCRService class

@@ -1,5 +1,5 @@
 package za.co.vsoftsystems.controller;
-/*
+/**
 * Author: Peter Buckingham
 * File: OCRController.java
 * Description: This is the OCRController class
@@ -8,12 +8,12 @@ package za.co.vsoftsystems.controller;
 *
 *
 * */
+
+import net.sourceforge.tess4j.TesseractException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import net.sourceforge.tess4j.TesseractException;
 import za.co.vsoftsystems.service.OCRService;
 import za.co.vsoftsystems.service.PDFToImageConverter;
 

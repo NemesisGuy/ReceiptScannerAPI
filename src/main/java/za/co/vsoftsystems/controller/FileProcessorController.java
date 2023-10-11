@@ -1,23 +1,27 @@
 package za.co.vsoftsystems.controller;
-/*
-* Author: Peter Buckingham
-* File: FileProcessorController.java
-* Description: This is the FileProcessorController class
-* This class is used to process the files in the inputdata folder and save the data to the database after regex processing,
-* and return the data in json format to the browser
-* Example of how to call the endpoint:
-* http://localhost:9000/process/files/default/regex
+/**
+ * Author: Peter Buckingham
+ * File: FileProcessorController.java
+ * Description: This is the FileProcessorController class
+ * This class is used to process the files in the inputdata folder and save the data to the database after regex processing,
+ * and return the data in json format to the browser
+ * The path to the inputdata folder is set in the application.properties file
+ * Example of how to call the endpoint:
+ * http://localhost:9000/process/files/default/regex
 *
 *
 * */
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import za.co.vsoftsystems.domain.ReceiptData;
 import za.co.vsoftsystems.service.FileProcessorService;
 import za.co.vsoftsystems.service.ReceiptDataService;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/process")
@@ -31,14 +35,6 @@ public class FileProcessorController {
     @Autowired
     private ReceiptDataService receiptDataService;
 
-
-/*
-    @PostMapping("/files")
-    public void processFiles(@RequestParam String folderPath) {
-        List<ReceiptData> receiptDataList = fileProcessorService.processFiles(folderPath);
-        receiptDataService.saveAllReceiptData(receiptDataList);
-    }
-*/
 
     //this calls the service to process the regex on the files and save them to the database and returns all the data in the database to the browser in json format
     //http://localhost:9000/process/files/default/regex

@@ -1,16 +1,17 @@
 package za.co.vsoftsystems.service;
-/*
+/**
 * Author: Peter Buckingham
 * File: PDFToImageConverter.java
 * Description: This is the PDFToImageConverter class
 * This class will not be used in the final product!!!
 * */
+
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,5 +1,5 @@
 package za.co.vsoftsystems.repository;
-/*
+/**
 * Author: Peter Buckingham
 * File: RawReceiptDataRepository.java
 * Description: This is the RawReceiptDataRepository class

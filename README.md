@@ -9,7 +9,7 @@
 
 # Contributors:
 
-    * Peter Buckingham 
+    Peter Buckingham 
 
 # Project Description:
 
@@ -17,7 +17,7 @@ The Receipt Data Processor API is a Spring Boot application that processes text 
 using regular expressions to extract receipt data. 
 
 The extracted data is processed using regular expressions (regex) to retrieve specific information, 
-which is subsequently saved to a database. Additionally, the processed files are moved to a designated folder after being processed.
+which is subsequently saved to a database. Additionally, the processed files can be moved to a designated folder after being processed.
 
 **Usage:**
 
@@ -28,7 +28,7 @@ Endpoint: /process/files/default/regex
 
 ****Description:****
 
-Processes files in the inputdata folder, applies regex processing, and stores the data in the database. 
+Processes files in the inputdata folder, applies regex processing, and stores the data in the database.
 
 *Example Request:* 
 http://localhost:9000/process/files/default/regex
@@ -36,17 +36,23 @@ http://localhost:9000/process/files/default/regex
 *Response:*
 Returns processed data in JSON format.
 
-***Store Raw Data***
+**Store Raw Data**
 
 Endpoint: /store/raw/data/files
 
 **Description:** 
 
-Stores the raw data from the files and moves the files to the processed folder.
+Stores the raw data from the files in the database with their respective file names.
 *Example Request:* 
 http://localhost:9000/store/raw/data/files
 
 Response: json upon storing raw data.
+
+**Move Files**
+
+**Endpoint:** /move/files
+**Description:** Moves files from the input folder to the processed folder.
+(These paths can be configured in application.properties)
 
 # Getting Started
 
@@ -74,8 +80,8 @@ Response: json upon storing raw data.
 - **service:** Services for processing files and applying regex.
 - **domain:** Contains the ReceiptData entity.
 - **src/main/resources:** Contains application properties and static resources.
-- **src/testdata/inputdata:** Contains test data.
-- **src/testdata/outputdata/processed:** Contains processed data. 
+- **src/data/inputdata:** Contains test data.
+- **src/data/outputdata/processed:** Contains processed data. 
 
 
 ## Design Choices and Patterns:
@@ -92,7 +98,7 @@ The project follows the principles of Domain-Driven Design (DDD) to organize the
 
 - **Value Objects:** Value objects represent concepts that don't have an identity, and are used for their attributes.
 
-- **Factories:** Factories are used to encapsulate the logic for creating complex objects.
+- **Factories: (to be implemented) ** Factories are used to encapsulate the logic for creating complex objects.
 
 ### Repository Pattern
 
@@ -102,6 +108,6 @@ The repository pattern is utilized to separate the logic that retrieves data fro
 
 The Builder pattern is employed for creating complex objects, such as `ReceiptData`, in a step-by-step manner. This improves the readability of object instantiation and allows for flexible construction.
 
-### Factory Pattern - to be implemented
+### Factory Pattern - (to be implemented)
 
 The Factory pattern is used to create objects without exposing the instantiation logic to the client. This allows for the creation of different types of objects without the need to change the client code.
