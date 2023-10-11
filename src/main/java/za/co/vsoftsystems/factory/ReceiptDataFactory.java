@@ -10,9 +10,10 @@ import za.co.vsoftsystems.domain.ReceiptData;
 
 public class ReceiptDataFactory {
 
-    public static ReceiptData createReceiptData(String centerName, String name, String vfsReference,
+    public static ReceiptData createReceiptData(int id, String centerName, String name, String vfsReference,
                                                 String visaCategory, String subcategory, String subtype) {
         return new ReceiptData.Builder()
+                .id(id)
                 .centerName(centerName)
                 .name(name)
                 .vfsReference(vfsReference)
@@ -23,6 +24,7 @@ public class ReceiptDataFactory {
     }
     public static ReceiptData createReceiptData(ReceiptData receiptData) {
         return new ReceiptData.Builder()
+                .id(receiptData.getId())
                 .centerName(receiptData.getCenterName())
                 .name(receiptData.getName())
                 .vfsReference(receiptData.getVfsReference())
