@@ -7,7 +7,6 @@ import java.util.List;
 public class VisaDataExtractor {
     public static void main(String[] args) {
         List<String> rawDataList = List.of(
-
         );
 
         for (String rawData : rawDataList) {
