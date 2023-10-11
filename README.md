@@ -92,6 +92,8 @@ The project follows the principles of Domain-Driven Design (DDD) to organize the
 
 - **Value Objects:** Value objects represent concepts that don't have an identity, and are used for their attributes.
 
+- **Factories:** Factories are used to encapsulate the logic for creating complex objects.
+
 ### Repository Pattern
 
 The repository pattern is utilized to separate the logic that retrieves data from the database from the business logic. This promotes a cleaner and more maintainable codebase.
