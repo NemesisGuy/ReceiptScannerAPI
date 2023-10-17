@@ -13,6 +13,7 @@ package za.co.vsoftsystems.controller;
 * */
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,8 @@ import java.util.List;
 public class FileProcessorController {
 
     private final String defaultFolderPath = "src/main/java/za/co/vsoftsystems/testdata/inputdata"; // Set your default folder path here
-
+    @Value("${fileprocessor.inputdir}")
+    private String inputDir;
     @Autowired
     private FileProcessorService fileProcessorService;
 
@@ -40,7 +42,7 @@ public class FileProcessorController {
     //http://localhost:9000/process/files/default/regex
     @GetMapping("/files/default/regex")
     public List<ReceiptData> processFilesWithDefaultPath() {
-        List<ReceiptData> receiptDataList = fileProcessorService.processFiles(defaultFolderPath);
+        List<ReceiptData> receiptDataList = fileProcessorService.processFiles(inputDir);
         receiptDataService.saveAllReceiptData(receiptDataList);
 
         // Fetch all entries from the database
