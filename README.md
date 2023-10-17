@@ -112,8 +112,8 @@ If you encounter any issues during the process, feel free to reach out for assis
 - **service:** Services for processing files and applying regex.
 - **domain:** Contains the ReceiptData entity.
 - **src/main/resources:** Contains application properties and static resources.
-- **your_path/data/inputdata:** Contains test data. (Should be set in the path of your choice in the  application.properties file)
-- **your_path/data/outputdata:** Contains processed data. (Should be set in the path of your choice in the application.properties file)
+- **your_path/data/inputdata:** Contains data - in the form of .txt files. (Should be set in the path of your choice in the  application.properties file)
+- **your_path/data/outputdata:** Contains processed data in the form of .txt files. (Should be set in the path of your choice in the application.properties file)
 
 
 ## Design Choices and Patterns:
