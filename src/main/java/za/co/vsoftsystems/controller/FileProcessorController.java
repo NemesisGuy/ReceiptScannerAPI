@@ -28,7 +28,7 @@ import java.util.List;
 @RequestMapping("/process")
 public class FileProcessorController {
 
-    private final String defaultFolderPath = "src/main/java/za/co/vsoftsystems/testdata/inputdata"; // Set your default folder path here
+   // Set your default folder path in the application.properties file
     @Value("${fileprocessor.inputdir}")
     private String inputDir;
     @Autowired
