@@ -113,7 +113,7 @@ If you encounter any issues during the process, feel free to reach out for assis
 - **domain:** Contains the ReceiptData entity.
 - **src/main/resources:** Contains application properties and static resources.
 - **src/data/inputdata:** Contains test data.
-- **src/data/outputdata/processed:** Contains processed data. 
+- **src/data/outputdata:** Contains processed data. 
 
 
 ## Design Choices and Patterns:
@@ -130,7 +130,7 @@ The project follows the principles of Domain-Driven Design (DDD) to organize the
 
 - **Value Objects:** Value objects represent concepts that don't have an identity, and are used for their attributes.
 
-- **Factories: (to be implemented) ** Factories are used to encapsulate the logic for creating complex objects.
+- **Factories: (to be implemented)** Factories are used to encapsulate the logic for creating complex objects.
 
 ### Repository Pattern
 
