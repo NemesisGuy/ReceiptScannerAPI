@@ -5,7 +5,7 @@ package za.co.vsoftsystems.controller;
  * Description: This is the AutomationController class
  * This class will be used to store the raw data from the files in the database and perform regex on the data and store in database
  * Example of how to call the endpoint:
- * http://localhost:9000/automation/process-and-apply-regex
+ * http://localhost:port/automation/process-and-apply-regex
  *
  * */
 

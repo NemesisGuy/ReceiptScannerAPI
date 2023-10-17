@@ -7,7 +7,7 @@ package za.co.vsoftsystems.controller;
  * This class is used to move the files from the input folder to the processed folder
  * The paths are configured in the application.properties file
  * Example of how to call the endpoint:
- * http://localhost:9000/move/files*
+ * http://localhost:port/move/files*
  */
 
 import org.springframework.beans.factory.annotation.Autowired;

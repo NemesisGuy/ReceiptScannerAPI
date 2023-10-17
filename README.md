@@ -31,7 +31,7 @@ Endpoint: /process/files/default/regex
 Processes files in the inputdata folder, applies regex processing, and stores the data in the database.
 
 *Example Request:* 
-http://localhost:9000/process/files/default/regex
+http://localhost:9001/process/files/default/regex
 
 *Response:*
 Returns processed data in JSON format.
@@ -44,7 +44,7 @@ Endpoint: /store/raw/data/files
 
 Stores the raw data from the files in the database with their respective file names.
 *Example Request:* 
-http://localhost:9000/store/raw/data/files
+http://localhost:9001/store/raw/data/files
 
 Response: json upon storing raw data.
 
@@ -62,9 +62,41 @@ Response: json upon storing raw data.
 
 **Requirements**
 
-- Java 11 or higher
+- Java 17 or higher
 - Spring Boot 
 - Database (MySQL)
+
+# Running the Application
+
+To run the Receipt Scanner API as a JAR file, follow these steps:
+
+1. Ensure you have Java 17 or higher installed on your system.
+
+2. Build the project by running the following command in the project directory:
+    
+     mvn clean package
+
+3. Once the build is successful, navigate to the `target` directory:
+
+    cd target
+
+4. Use the following command to start the application:
+
+    java -jar receipt-scanner-api-0.0.1-SNAPSHOT.jar
+
+
+This will start the application, and you should see logs indicating its initialization.
+
+5. Access the API using the provided endpoints. By default, it will be available at:
+
+    http://localhost:9001
+
+6. To stop the application, you can press `Ctrl + C` (Windows) or `Command + C` (Mac) in the terminal where the application is running.
+
+**Note**: Ensure that you have configured the application.properties file with the correct paths and database connections before running the application.
+
+If you encounter any issues during the process, feel free to reach out for assistance.
+
 
  # ****Configuration:****
 

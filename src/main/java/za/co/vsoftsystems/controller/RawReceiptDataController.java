@@ -5,7 +5,7 @@ package za.co.vsoftsystems.controller;
 * Description: This is the RawReceiptDataController class
 * This class will be used to store the raw data from the files and move the files to the processed folder
 * Example of how to call the endpoint:
-* http://localhost:9000/store/raw/data/files
+* http://localhost:port/store/raw/data/files
 *
 * */
 

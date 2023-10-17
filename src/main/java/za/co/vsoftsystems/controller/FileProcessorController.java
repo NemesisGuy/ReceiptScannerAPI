@@ -7,7 +7,7 @@ package za.co.vsoftsystems.controller;
  * and return the data in json format to the browser
  * The path to the inputdata folder is set in the application.properties file
  * Example of how to call the endpoint:
- * http://localhost:9000/process/files/default/regex
+ * http://localhost:port/process/files/default/regex
 *
 *
 * */
@@ -39,7 +39,7 @@ public class FileProcessorController {
 
 
     //this calls the service to process the regex on the files and save them to the database and returns all the data in the database to the browser in json format
-    //http://localhost:9000/process/files/default/regex
+    //http://localhost:port/process/files/default/regex
     @GetMapping("/files/default/regex")
     public List<ReceiptData> processFilesWithDefaultPath() {
         List<ReceiptData> receiptDataList = fileProcessorService.processFiles(inputDir);
