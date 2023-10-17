@@ -41,14 +41,18 @@ public class RawReceiptDataService {
                 for (File file : files) {
                     try {
                         List<String> lines = Files.readAllLines(Paths.get(file.getAbsolutePath()));
+                        String fileName = file.getName(); // Get the file name
+                        StringBuilder content = new StringBuilder();
                         for (String line : lines) {
-                            String fileName = file.getName(); // Get the file name
-                           // RawReceiptData receiptData = RawReceiptDataFactory.createRawReceiptData(fileName, line); // Use factory method
-                            RawReceiptData receiptData = new RawReceiptData(fileName, line  );
-                            rawReceiptDataRepository.save(receiptData);
-                            rawReceiptDataList.add(receiptData);
+                            content.append(line).append("\n");
                         }
-                        //  moveFileToProcessedFolder(file);
+                        // RawReceiptData receiptData = RawReceiptDataFactory.createRawReceiptData(fileName, content.toString()); // Use factory method
+                        RawReceiptData receiptData = new RawReceiptData(fileName, content.toString());
+                        rawReceiptDataRepository.save(receiptData);
+                        rawReceiptDataList.add(receiptData);
+
+                        // Move the file outside the loop if needed
+                        // moveFileToProcessedFolder(file);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -62,6 +66,7 @@ public class RawReceiptDataService {
 
         return rawReceiptDataList;
     }
+
 
 }
 

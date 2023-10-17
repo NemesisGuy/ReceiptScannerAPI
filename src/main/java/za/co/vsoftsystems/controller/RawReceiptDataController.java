@@ -35,6 +35,7 @@ public class RawReceiptDataController {
     //this endpoint will be used to store the raw data from the files and move the files to the processed folder
     @GetMapping("/files")
     public List<RawReceiptData> processFiles() {
+
         return rawReceiptDataService.processFiles(inputDir);
     }
 }
