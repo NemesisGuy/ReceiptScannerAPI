@@ -37,7 +37,6 @@ public class FileProcessorController {
     @Autowired
     private ReceiptDataService receiptDataService;
 
-
     //this calls the service to process the regex on the files and save them to the database and returns all the data in the database to the browser in json format
     //http://localhost:port/process/files/default/regex
     @GetMapping("/files/default/regex")

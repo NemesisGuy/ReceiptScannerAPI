@@ -26,7 +26,6 @@ public class OCRController {
 
     @Autowired
     private OCRService ocrService;
-
     @GetMapping("/performOCR")
     public ResponseEntity<?> performOCR() {
         try {
@@ -59,5 +58,4 @@ public class OCRController {
             return ResponseEntity.status(500).body("An error occurred during OCR processing.");
         }
     }
-
 }

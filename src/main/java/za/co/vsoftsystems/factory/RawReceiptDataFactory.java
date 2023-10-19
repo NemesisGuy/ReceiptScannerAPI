@@ -10,7 +10,6 @@ public class RawReceiptDataFactory {
                 .RawData(RawData)
                 .build();
     }
-
     public static RawReceiptData createRawReceiptData(RawReceiptData rawReceiptData) {
         return new RawReceiptData.Builder()
                 .id(rawReceiptData.getId())
@@ -18,14 +17,12 @@ public class RawReceiptDataFactory {
                 .RawData(rawReceiptData.getRawData())
                 .build();
     }
-
     public static RawReceiptData createRawReceiptData(Long id, String fileName) {
         return new RawReceiptData.Builder()
                 .id(id)
                 .fileName(fileName)
                 .build();
     }
-
     public static RawReceiptData createRawReceiptData(String fileName, String RawData) {
         return new RawReceiptData.Builder()
                 .fileName(fileName)
