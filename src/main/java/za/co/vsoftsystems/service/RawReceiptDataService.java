@@ -18,9 +18,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Service
 public class RawReceiptDataService {
+    private static final Logger logger = LoggerFactory.getLogger(RawReceiptDataService.class);
 
     @Autowired
     private RawReceiptDataRepository rawReceiptDataRepository;
@@ -50,18 +52,21 @@ public class RawReceiptDataService {
                         RawReceiptData receiptData = new RawReceiptData(fileName, content.toString());
                         rawReceiptDataRepository.save(receiptData);
                         rawReceiptDataList.add(receiptData);
-
+                        logger.info("File processed by Raw Receipt Data Service: " + file.getName());
                         // Move the file outside the loop if needed
                         // moveFileToProcessedFolder(file);
                     } catch (IOException e) {
+                        logger.error("Error processing file with Raw Receipt Data Service: " + e.getMessage());
                         e.printStackTrace();
                     }
                 }
             } else {
                 System.out.println("No files found in the folder: " + inputDir);
+                logger.error("No files found in the folder: " + inputDir);
             }
         } else {
             System.out.println("The path provided is not a folder: " + inputDir);
+            logger.error("The path provided is not a folder: " + inputDir);
         }
 
         return rawReceiptDataList;

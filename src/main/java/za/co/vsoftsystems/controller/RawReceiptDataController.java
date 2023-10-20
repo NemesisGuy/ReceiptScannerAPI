@@ -19,10 +19,12 @@ import za.co.vsoftsystems.domain.RawReceiptData;
 import za.co.vsoftsystems.service.RawReceiptDataService;
 
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @RestController
 @RequestMapping("/store/raw/data")
 public class RawReceiptDataController {
+    private static final Logger logger = LoggerFactory.getLogger(RawReceiptDataController.class);
     @Value("${fileprocessor.inputdir}")
     private String inputDir;
 
@@ -35,6 +37,7 @@ public class RawReceiptDataController {
     //this endpoint will be used to store the raw data from the files and move the files to the processed folder
     @GetMapping("/files")
     public List<RawReceiptData> processFiles() {
+        logger.info("Processing files in the input directory: " + inputDir);
 
         return rawReceiptDataService.processFiles(inputDir);
     }

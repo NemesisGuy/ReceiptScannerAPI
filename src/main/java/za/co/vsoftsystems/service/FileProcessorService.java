@@ -17,10 +17,11 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Service
 public class FileProcessorService {
-
+    private static final Logger logger = LoggerFactory.getLogger(FileProcessorService.class);
     @Autowired
     private ReceiptRegexProcessor regexProcessor;
 
@@ -48,8 +49,12 @@ public class FileProcessorService {
                             String fileName = file.getName(); // Get the file name separately
                             receiptData.setFileName(fileName); // Set the fileName here
                             receiptDataList.add(receiptData);
+                            logger.info("File processed by regex: " + file.getName());
+                        }else {
+                            logger.error("Error processing file for regex: " + file.getName());
                         }
                     } catch (IOException e) {
+                        logger.error("Error processing file for regex: " + e.getMessage());
                         e.printStackTrace();
                     }
                 }

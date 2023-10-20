@@ -14,10 +14,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @Service
 public class FileMovingService {
-
+    private static final Logger logger = LoggerFactory.getLogger(FileMovingService.class);
     @Value("${fileprocessor.inputdir}")
     private String inputDir;
 
@@ -29,5 +30,7 @@ public class FileMovingService {
         Path destinationPath = Paths.get(processedDir, file.getName());
         Files.move(sourcePath, destinationPath);
         System.out.println("File Moved to processed folder: " + destinationPath);
+        logger.info("File Moved to processed folder: " + destinationPath);
+
     }
 }

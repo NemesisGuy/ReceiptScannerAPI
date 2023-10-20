@@ -22,10 +22,13 @@ import za.co.vsoftsystems.service.RawReceiptDataService;
 import za.co.vsoftsystems.service.ReceiptDataService;
 
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @RestController
 @RequestMapping("/automation")
 public class AutomationController {
+    private static final Logger logger = LoggerFactory.getLogger(AutomationController.class);
+
     @Value("${fileprocessor.inputdir}")
     private String inputDir;
 
@@ -43,7 +46,7 @@ public class AutomationController {
 
     @GetMapping("/process-and-apply-regex")
     public List<ReceiptData> processAndApplyRegex() {
-        // Assuming you want to use the configured input and output directories
+        logger.info("Processing files in the input directory: " + inputDir);
         //get file and store raw data in database
         rawReceiptDataService.processFiles(inputDir);
         //process raw data and apply regex
@@ -53,6 +56,7 @@ public class AutomationController {
         // Fetch all entries from the database
         List<ReceiptData> allReceiptData = receiptDataService.getAllReceiptData();
         //return all data in database
+
         return allReceiptData;
     }
 

@@ -97,6 +97,20 @@ This will start the application, and you should see logs indicating its initiali
 
 If you encounter any issues during the process, feel free to reach out for assistance.
 
+## Error Logs
+
+The application generates error logs to track any issues or exceptions that occur during its operation. These logs are stored in the `logs` directory.
+
+If you encounter any problems while using the application, please check the log files for more information. You can find the log files at the following location:
+
+/logs/receipt_scanner.log
+
+
+In case of any unexpected behavior, examining the log files can provide valuable insights into the issue.
+
+
+
+
 
  # ****Configuration:****
 

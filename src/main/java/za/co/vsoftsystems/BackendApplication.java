@@ -9,12 +9,19 @@ package za.co.vsoftsystems;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 @SpringBootApplication
 public class BackendApplication {
+    private static final Logger logger = LoggerFactory.getLogger(BackendApplication.class);
 
     public static void main(String[] args) {
+
+        logger.info(" ");
+        logger.info("Starting Backend Application ...");
         SpringApplication.run(BackendApplication.class, args);
+        logger.info(" ...");
+        logger.info("___________________________________________API Backend Application Has Started_____________________________________________________");
     }
 
 }

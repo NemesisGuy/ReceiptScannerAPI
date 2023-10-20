@@ -1,4 +1,4 @@
-package za.co.vsoftsystems.service;
+package za.co.vsoftsystems.service.ocr;
 /**
 * Author: Peter Buckingham
 * File: OCRService.java
