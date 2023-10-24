@@ -34,14 +34,12 @@ public class ReceiptData {
     @Column(name = "timestamp",columnDefinition = "TEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci")
     private Date timestamp;
 
-
-
-    public ReceiptData() {
-
-    }
     @PrePersist
     protected void onCreate() {
         timestamp = new Date(System.currentTimeMillis());
+    }
+    public ReceiptData() {
+
     }
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
